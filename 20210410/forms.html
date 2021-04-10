@@ -13,9 +13,17 @@
         <option value="2">졸업생</option>
     </select><br>
     <hr>
-    먹고 싶은 음식: <input type="checkbox" name="a" value="a" selected>짜장면 <input type="checkbox" name="b" value="b">탕수육<br>
-    지금 있는 장소: <input type="radio" name="c" value="c">집 <input type="radio" name="d" value="d">목포대학교 정보보호영재교육원 <input type="radio" name="e" value="e">중국집
-    <br><br>
+    <table border="2">
+        <caption>checkbox/radio</caption>
+        <tbody>
+            <tr><td>먹고 싶은 음식</td><td>지금 있는 장소</td></tr>
+            <tr><td><input type="checkbox" name="a" value="a" selected>짜장면</td><td><input type="radio" name="c" value="c">집</td></tr>
+            <tr><td><input type="checkbox" name="b" value="b">탕수육</td><td><input type="radio" name="d" value="d">정보보호영재교육원</td></tr>
+            <tr><td><!-- --></td><td><input type="radio" name="e" value="e">중국집</td></tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
     <button type="submit">제출</button>
     <br><br>
     <button type="submit"><img src="https://upload.wikimedia.org/wikipedia/ko/thumb/8/87/Kakaofriends.png/300px-Kakaofriends.png"></button>
