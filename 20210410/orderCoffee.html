@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>JS CS(Javascript CoffeeShop)</title>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                background-color: lemonchiffon;
+                margin: 50px;
+            }
+            * {
+                font-family: Kakao Bold;
+                text-align: center;
+            }
+        </style>
+    </head>
+<body>
+    <h1 id="text">커피를 주문해 보세요!</h1>
+    <div id="coffeemenu">
+        <table>
+            <caption style="font-size: 20;">메뉴판</caption>
+            <tbody>
+                <tr><td>번호</td><td>메뉴명</td><td>가격</td></tr>
+                <tr><td>1</td><td>아메리카노</td><td>1,500원</td></tr>
+                <tr><td>2</td><td>에스프레소</td><td>1,600원</td></tr>
+                <tr><td>3</td><td>카푸치노</td><td>1,700원</td></tr>
+                <tr><td>4</td><td>카페라떼</td><td>1,800원</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <hr>
+
+    <h2 id="subtitle" onclick="javascript:orderCoffee();">주문하시려면 여기를 눌러주세요!</h2>
+    <script>
+        
+        function changeText(coffeename, midtext, pricetext) {
+            document.getElementById("subtitle").innerHTML = coffeename + midtext + pricetext;
+        }
+
+        function orderCoffee() {
+            var coffee = prompt("1. 아메리카노\n2. 에스프레소\n3. 카푸치노\n4. 카페라떼\n\n무슨 커피 드릴까요?");
+            if (coffee != null) {
+                var ret = confirm("찾으시는 커피가 " + coffee + "인가요?");
+            }
+            
+            if (ret == true) {
+                switch(coffee) {
+                    case "아메리카노":
+                        price = 1500;
+                        orderOK = true;
+                        break;
+                    case "에스프레소":
+                        price = 1600;
+                        orderOK = true;
+                        break;
+                    case "카푸치노":
+                        price = 1700;
+                        orderOK = true;
+                        break;
+                    case "카페라떼":
+                        price = 1800;
+                        orderOK = true;
+                        break;
+                    default:
+                        price = 0;
+                        orderOK = false;
+                        break;
+                }
+
+                if (orderOK == true) {
+                    //메뉴가 있는 경우
+                    midtext = '를 구매하실 수 있으며, ';
+                    pricetext = '결제하실 금액은 ' + price + '원 입니다.';
+                    changeText(coffee, midtext, pricetext)
+                } else {
+                    midtext = '는 없습니다.';
+                    changeText(coffee, midtext, '');
+                }
+
+                //alert(name + "님의 이름이 저장되었습니다.");
+                //document.getElementById("subtitle").innerHTML = name + "님으로 이름이 저장되어있습니다.<br>변경하려면 여기를 누르세요.";
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
