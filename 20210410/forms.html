@@ -1,30 +1,78 @@
-<form action="" method="GET">
-    이름: <input name="name" type="text"><br>
-    비밀번호: <input name="password" type="password"><br>
-    글: <textarea cols="30" rows="3" name="tarea">여기를 지우고 입력하세요!</textarea><br>
-    게시판: <input type="text" list="boards">
-        <datalist id="boards">
-            <option value="자유게시판"></option>
-            <option value="질문게시판"></option>
-        </datalist>
-        <br>
-    신분: <select name="position">
-        <option value="1">재학생</option>
-        <option value="2">졸업생</option>
-    </select><br>
-    <hr>
-    <table border="2">
-        <caption>checkbox/radio</caption>
-        <tbody>
-            <tr><td>먹고 싶은 음식</td><td>지금 있는 장소</td></tr>
-            <tr><td><input type="checkbox" name="a" value="a" selected>짜장면</td><td><input type="radio" name="c" value="c">집</td></tr>
-            <tr><td><input type="checkbox" name="b" value="b">탕수육</td><td><input type="radio" name="d" value="d">정보보호영재교육원</td></tr>
-            <tr><td><!-- --></td><td><input type="radio" name="e" value="e">중국집</td></tr>
-        </tbody>
-    </table>
-    <br>
-    <br>
-    <button type="submit">제출</button>
-    <br><br>
-    <button type="submit"><img src="https://upload.wikimedia.org/wikipedia/ko/thumb/8/87/Kakaofriends.png/300px-Kakaofriends.png"></button>
-</form>
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>input/forms 태그 활용하기</title>
+        <style>
+            @font-face {
+                font-family: 'MaruBuri-Regular';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+                font-weight: normal;
+                font-style: normal;
+            }
+            body {
+                background-color: linen;
+                /* margin-left: 30px;
+                margin-right: 30px; */
+                margin: 30px;
+                font-family: "MaruBuri-Regular";
+            }
+            hr, li {
+                border: 5px solid mistyrose;
+            }
+            span {
+                color: deepskyblue;
+                font-size: 17px;
+            }
+            table.magenta {
+                border: 5px solid lightpink;
+            }
+
+            h3 {
+                color: peru;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- body here -->
+        <h3>input/forms 태그와 CSS 활용하기</h3>
+        <span>table을 만들어 내용을 넣어주었습니다.</span>
+        <br><br>
+        <form action="" method="GET">
+            <table>
+                <tbody>
+                    <tr><td>이름</td><td><input name="name" type="text"></td></tr>
+                    <tr><td>비밀번호</td><td><input name="password" type="password"></td></tr>
+                    <tr><td>내용</td><td><textarea cols="30" rows="3" name="tarea">여기를 지우고 입력하세요!</textarea></td></tr>
+                    <tr><td>게시판</td><td><input type="text" list="boards">
+                        <datalist id="boards">
+                            <option value="자유게시판"></option>
+                            <option value="질문게시판"></option>
+                        </datalist></td></tr>
+                    <tr><td>신분</td><td><select name="position">
+                        <option value="1">재학생</option>
+                        <option value="2">졸업생</option>
+                    </select></td></tr>
+                </tbody>
+            </table>
+
+            <hr>
+            <h3>checkbox/radio 태그와 CSS 활용하기</h3>
+            <table class="magenta">
+                <!-- caption>checkbox/radio</caption -->
+                <tbody>
+                    <tr><td class="title">먹고 싶은 음식</td><td>지금 있는 장소</td></tr>
+                    <tr><td><input type="checkbox" name="a" value="a" selected>짜장면</td><td><input type="radio" name="c" value="c">집</td></tr>
+                    <tr><td><input type="checkbox" name="b" value="b">탕수육</td><td><input type="radio" name="d" value="d">정보보호영재교육원</td></tr>
+                    <tr><td><!-- --></td><td><input type="radio" name="e" value="e">중국집</td></tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <button type="submit">제출</button>
+            <br><br>
+            <button type="submit"><img src="https://raw.githubusercontent.com/dhlife09/dhlife09.github.io/master/mnu_kakaofriends.png"></button>
+        </form>
+    </body>
+</html>
