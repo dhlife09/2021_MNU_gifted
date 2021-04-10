@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>JS CS(Javascript CoffeeShop)</title>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                background-color: lemonchiffon;
+                margin: 50px;
+            }
+            * {
+                font-family: Kakao Bold;
+                text-align: center;
+            }
+        </style>
+    </head>
+<body>
+    <h1 id="text">1부터 몇까지 더해야 3,000을 넘는가?</h1>
+    <div id="coffeemenu">
+        <table>
+            <caption style="font-size: 20;">메뉴판</caption>
+            <tbody>
+                <tr><td>번호</td><td>메뉴명</td><td>가격</td></tr>
+                <tr><td>1</td><td>아메리카노</td><td>1,500원</td></tr>
+                <tr><td>2</td><td>에스프레소</td><td>1,600원</td></tr>
+                <tr><td>3</td><td>카푸치노</td><td>1,700원</td></tr>
+                <tr><td>4</td><td>카페라떼</td><td>1,800원</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <hr>
+
+    <h2 id="subtitle" onclick="javascript:orderCoffee();">주문하시려면 여기를 눌러주세요!</h2>
+    <script>
+        
+        function changeText(coffeename, midtext, pricetext) {
+            document.getElementById("subtitle").innerHTML = coffeename + midtext + pricetext;
+        }
+
+        function orderCoffee() {
+            var count=0; sum=0;
+            while(true) {
+                sum += count;   // sum = sum+count
+                if (sum > 3000) // 3000보다 크면 break;
+                    break;
+                count++;
+            }
+            document.getElementById("subtitle").innerHTML = count + "까지 더하면 3000을 넘음: " + sum;
+        }
+        
+    </script>
+    
+</body>
+</html>
