@@ -1,0 +1,52 @@
+
+<button onclick="javascript:makestar()">만들기</button>
+<button onclick="javascript:staralign()">정렬</button>
+<button onclick="javascript:kakao()">카카오</button>
+<br><br>
+
+<span id="star1"></span><br>
+<span id="star2"></span><br>
+<span id="star3"></span><br>
+<span id="star4"></span><br>
+<span id="star5"></span><br>
+
+<div id="kakao">
+
+</div>
+
+
+<script>
+    function kakao() {
+        var count = prompt("양의 정수를 입력하세요.");
+        if (count > 0) {
+            for (var i=1; i<=count; i++) {
+                document.write('<img src="lion.png" alt="라이언 사진" width="150">')
+            }
+            alert("라이언 사진 " + count + "개 입니다.");
+        }
+    }
+    function makestar() {
+        for(var i=1; i<=5; i++){
+            document.getElementById("star" + i).innerHTML = "*".repeat(i);
+        }
+    }
+
+
+    //var target = document.getElementById("star"); //대상을 요소id로 지정
+    align = "left";
+    function staralign() {
+        if (align == "left") {
+            var ret = confirm("*모양을 오른쪽으로 정렬할까요?");
+        } else if (align == "right") {
+            var ret= confirm("*모양을 왼쪽으로 정렬할까요?");
+        }
+        if (ret == true) {
+            if (align == "left") {
+                //오른쪽 정렬
+                
+            } else if (align == "right") {
+                //왼쪽 정렬
+            }
+        }
+    }
+</script>

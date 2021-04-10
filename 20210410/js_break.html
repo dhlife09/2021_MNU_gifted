@@ -14,7 +14,7 @@
         </style>
     </head>
 <body>
-    <h1 id="text">1부터 몇까지 더해야 3,000을 넘는가?</h1>
+    <h1 id="text">1) 1부터 몇까지 더해야 3,000을 넘는가?</h1>
     <div id="coffeemenu">
         <table>
             <caption style="font-size: 20;">메뉴판</caption>
@@ -30,7 +30,9 @@
     <br><br>
     <hr>
 
-    <h2 id="subtitle" onclick="javascript:orderCoffee();">주문하시려면 여기를 눌러주세요!</h2>
+    <h2 id="subtitle" onclick="javascript:orderCoffee();">첫번째는 여기를 눌러주세요!</h2>
+    <h2 id="aaaaa" onclick="javascript:ddddd();">두번째 여기를 눌러주세요!</h2>
+    <h2 id="bbbbb"></h2>
     <script>
         
         function changeText(coffeename, midtext, pricetext) {
@@ -48,6 +50,16 @@
             document.getElementById("subtitle").innerHTML = count + "까지 더하면 3000을 넘음: " + sum;
         }
         
+        function ddddd() {
+            var sum=0;
+            for (var i=1; i <= 50; i++) {
+                if (i % 5 != 2)
+                    continue;
+                document.getElementById("aaaaa").innerHTML = i + " ";
+                sum += i;
+            }
+            document.getElementById("bbbbb").innerHTML = "합은 " + sum;
+        }
     </script>
     
 </body>
