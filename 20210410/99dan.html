@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function calc(n, i) {
+                return n*i;
+            }
+
+            function times_table(n) {
+                var m = parseInt(n);    //문자열을 숫자로 변환
+                if (isNaN(m) || m<1 || m>9) {
+                    alert("잘못된 입력입니다.");
+                    return;
+                }
+                for(var i=1; i<=9; i++){
+                    var rst = calc(n, i);
+                    document.write(n + " * " + i + " = " + rst + "<br>");
+            }
+            }
+        </script>
+    </head>
+    <body>
+        <h4>구구단 출력하기</h4>
+        <script>
+            var num=prompt("몇 단을 원하세요(구구단)?", "");
+            times_table(num); //함수 호출
+        </script>
+    </body>
+</html>
