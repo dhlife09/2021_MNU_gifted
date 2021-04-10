@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>JS mouse over/out effect</title>
+        <meta charset="UTF-8">
+        <style>
+            body {
+                background-color:lavenderblush;
+                margin: 50px;
+            }
+            * {
+                font-family: Kakao Bold;
+                text-align: center;
+            }
+        </style>
+    </head>
+<body>
+    <h1 id="text">500원 동전의 앞면입니다.</h1>
+    <img src="front_500.jpg" alt="image" onclick="alert('이것은 500원 동전입니다.');" onmouseover="m_over(this)" onmouseout="m_out(this)">
+    <br><br>
+    <hr>
+
+    <h2 id="subtitle" onclick="javascript:promptOpen();">여기를 눌러서 이름을 알려주세요!</h2>
+    <script>
+        function m_over(obj) {
+            obj.src="back_500.jpg";
+            document.getElementById("text").innerHTML="500원 동전의 뒷면입니다.";
+        }
+        function m_out(obj) {
+            obj.src="front_500.jpg";
+            document.getElementById("text").innerHTML="500원 동전의 앞면입니다.";
+        }
+        function promptOpen() {
+            //var name = prompt("이름을 입력해 주세요.", "blank");
+            var name = prompt("이름을 입력해 주세요.");
+            var ret = confirm("입력하신 이름이 " + name + "인가요?");
+            if (ret == true) {
+                alert(name + "님의 이름이 저장되었습니다.");
+                document.getElementById("subtitle").innerHTML = name + "님으로 이름이 저장되어있습니다.<br>변경하려면 여기를 누르세요.";
+            }
+        }
+    </script>
+    
+</body>
+</html>
