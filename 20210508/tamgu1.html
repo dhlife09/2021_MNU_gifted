@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>계산하기</title>
+    </head>
+    <body>
+        <h2>계산을 해보자</h2>
+        <p>수식 계산 후 답을 입력하고 채점 버튼을 누르세요.</p>
+        <hr>
+        <table>
+            <tbody>
+                <tr><td id="p1q">5*6</td><td><input id="p1"></td></tr>
+                <tr><td id="p2q">7+5*3</td><td><input id="p2"></td></tr>
+                <tr><td id="p3q">23*2</td><td><input id="p3"></td></tr>
+                <tr><td id="p4q">35-7</td><td><input id="p4"></td></tr>
+            </tbody>
+        </table>
+        <button onclick="checkAnswer();">채점</button>
+        <span id="result">수식을 계산하고 채점을 누르세요.</span>
+
+        <script>
+            function checkAnswer() {
+                function changeTextDeco(style, id) {
+                    document.getElementById(id).style.textDecoration = style;
+                }
+                p1 = document.getElementById("p1").value;
+                p2 = document.getElementById("p2").value;
+                p3 = document.getElementById("p3").value;
+                p4 = document.getElementById("p4").value;
+                var totalCorrectResult=0;
+                if (p1==30) {
+                    //p1 정답
+                    changeTextDeco("none", "p1q");
+                    var totalCorrectResult=totalCorrectResult+1;
+                } else {
+                    //p1 오답
+                    changeTextDeco("line-through", "p1q");
+                }
+                if (p2==22) {
+                    //p2 정답
+                    changeTextDeco("none", "p2q");
+                    var totalCorrectResult=totalCorrectResult+1;
+                } else {
+                    //p2 오답
+                    changeTextDeco("line-through", "p2q");
+                } if (p3==46) {
+                    //p3 정답
+                    changeTextDeco("none", "p3q");
+                    var totalCorrectResult=totalCorrectResult+1;
+                } else {
+                    //p3 오답
+                    changeTextDeco("line-through", "p3q");
+                } if (p4==28) {
+                    //p4 정답
+                    changeTextDeco("none", "p4q");
+                    var totalCorrectResult=totalCorrectResult+1;
+                } else {
+                    //p4 오답
+                    changeTextDeco("line-through", "p4q");
+                }
+
+                document.getElementById("result").innerHTML = '총 4문제 중 ' + totalCorrectResult + '문제를 맞히셨습니다.';
+            }
+        </script>
+
+    </body>
+</html>

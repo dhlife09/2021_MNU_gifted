@@ -1,0 +1,15 @@
+<html>
+
+현재 <span id="sec">0</span>초가 지났습니다.
+
+<script>
+    var second = 0;
+    function hi(time) {
+        var p = document.getElementById("sec");
+        second += time;
+        p.innerHTML = second;
+    }
+    var timerID = setInterval("hi(1)", 1000);
+</script>
+
+</html>

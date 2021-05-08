@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<title>숫자 맞추기</title>
+<style>
+	span { color : blue; font-size : 50px; }
+	strong { color : red; }
+</style>
+<script>
+var count = 4;
+var result = 0;
+var flag = 1;
+var value = Array(3);
+var Max_Number = 5;
+function maxNumber() {
+	document.write(Max_Number-1);
+	return Max_Number - 1;
+}
+function change(obj) {
+	var number = Math.floor(Math.random()*Max_Number);
+	if (count <= 0) return false;
+	switch (obj.id) {
+		case "first":
+		    value[0] = number; break;
+		case "second":
+		    value[1] = number; break;
+		case "third":
+		    value[2] = number; break;
+	}
+	obj.innerHTML = number;
+	count --;
+	return true;
+}
+function score() {
+	if (value[0] == value[1] && value[0] == value[2])
+		return 10;
+	return 0;
+}
+function compute() {
+    var p = document.getElementById("score");
+	if (flag == 1) {
+		flag = 0;
+		result += score();
+	}
+	p.innerHTML = "당신의 점수는 <strong>" + result + "</strong>입니다.";
+}
+function initNumber(){
+    var spanArray = document.getElementsByTagName("span");
+	for (var i = 0; i < spanArray.length; i++) {
+		var obj = spanArray[i];
+		value[i] = Math.floor(Math.random()*Max_Number);
+		obj.innerHTML = value[i];
+	}
+}
+function reset() {
+    var spanArray = document.getElementsByTagName("span");
+	compute();
+	for (var i = 0; i < spanArray.length; i++) {
+		var obj = spanArray[i];
+		value[i] = Math.floor(Math.random()*Max_Number);
+		obj.innerHTML = value[i];
+	}
+	count = 4;
+	result --;
+	flag = 1;
+}
+</script>
+</head>
+<body>
+<h3>숫자 맞추기 게임</h3>
+<p>
+각 숫자를 클릭하면 임의로 숫자가 바뀝니다. 숫자는 0~<script>maxNumber()</script> 사이의 값이 나옵니다.<br>
+모두 같은 수가 나오면 10점을 획득합니다. 새로 시작할 때마다 1점씩 감점합니다.
+바꿀 수 있는 기회는 총 4번입니다.<br> 바꾸고 싶은 숫자를 클릭하시오.
+</p>
+<hr>
+	  <span id = "first" onclick="change(this)">0</span> &nbsp;&nbsp;&nbsp;
+	  <span id = "second" onclick="change(this)">0</span> &nbsp;&nbsp;&nbsp;
+	  <span id = "third" onclick="change(this)">0</span>
+<hr>
+<button onclick="compute()">점수 계산</button>&nbsp;&nbsp;
+<p id = "score"> 당신의 점수는 <strong>0</strong>입니다.</p> <br>
+<button onclick="reset()">다시 시작</button>
+<script>
+	initNumber();
+</script>
+</body>
+</html>
