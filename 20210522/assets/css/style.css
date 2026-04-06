@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src: url('../fonts/GmarketSansMedium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+* {
+	font-family: GmarketSansMedium;
+	text-align: center;
+}
+h2.title {
+	background-color: #007bff;
+}
+table.products {
+	border-collapse: collapse;
+}
+td {
+	font-size: 20px;
+}
+table.products th, table.products td {
+	border: 1px solid #444444;
+}
+tr {
+	height: 50px;
+}
+input {
+	height: 40px; width: 70px; font-size: 20px;
+}
